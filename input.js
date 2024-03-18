@@ -2,8 +2,11 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { faker, ar } = require('@faker-js/faker');
 const content = [];
+// Nome da rota que sera criada pelo json server
 const arrayName  = 'users';
 
+// Adicionar valores dinamicos
+// para adicionar valores diferentes, consulte documentação da lib faker
 for (let i = 0; i < 50; i++) {
   const randomPayload = {
     id: faker.number.int({min:1, max: 50}),
