@@ -1,6 +1,6 @@
 # Mock-server
 
-Mini projeto para criar informações fake para teste de valores que podem ser adicionados em um arquivo estatico no arquivo db.json ou gerar valores dinamicos que serão salvos no diretorio input
+Mini projeto para criar informações fake e simular uma rota de API REST que pode ser adicionado seus valores em um arquivo estático no arquivo db.json ou gerar valores dinamicos que serão salvos no diretório input
 
 ## Tecnologias
 * Node 20
