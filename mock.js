@@ -9,8 +9,14 @@ let user = {
     id:{
         incrementalId: 0
     },
-    name: {
-        faker: 'faker.person.fullName()'
+    nome: {
+        faker: 'faker.person.firstName()'
+    },
+    creditCard : {
+        faker: 'faker.finance.creditCardNumber()'
+    },
+    cvv: {
+        faker: 'faker.finance.creditCardCVV()'
     }
 }
 
@@ -18,12 +24,9 @@ mocker()
     .addGenerator('faker', faker)
     .schema('users', user,10)
     .build(function(error,data) {
-
         if(error){
             throw error
         }
-
-
         fs.writeFile(filePath, JSON.stringify(data,null,2), 'utf8', (err) => {
             if (err) {
               console.log('Erro ao criar o arquivo: ',err);
