@@ -1,11 +1,11 @@
-const faker  = require('@faker-js/faker');
+const { fakerPT_BR : faker}  = require('@faker-js/faker');
 const mocker = require('mocker-data-generator').default
 const fs = require('node:fs');
 const path = require('node:path');
 
 const filePath = path.join(__dirname,'input','db.json')
 
-let user = {
+let schema = {
     id:{
         incrementalId: 0
     },
@@ -21,8 +21,8 @@ let user = {
 }
 
 mocker()
-    .addGenerator('faker', faker)
-    .schema('users', user,10)
+    .addGenerator('faker', {faker})
+    .schema('users', schema,10)
     .build(function(error,data) {
         if(error){
             throw error
